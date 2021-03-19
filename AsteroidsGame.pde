@@ -52,7 +52,8 @@ public void draw() {
   
   textFont(f,16);                  // STEP 3 Specify font to be used
   fill(255);                       // STEP 4 Specify font color 
-  //text("Hello Strings!",10,100);   // STEP 5 Display Text
+  text("NOT ADDING BULLETS ITS DISPLAYING THEM",200,100);   // STEP 5 Display Text
+  text(bullets.size(),230,100);
   
   //Display all stars after blacking out image
   for (Star s: nightSky){
