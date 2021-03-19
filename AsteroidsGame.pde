@@ -30,7 +30,10 @@ public void setup() {
   bob = new Spaceship( );
   bullets = new ArrayList<Bullet>();
   
-  bullets.add( new Bullet(bob) ); //adding bullests is causing an issue in Github but not processing.
+  bullets.add( new Bullet(bob) ); //adding bullests is causing an issue in Github but not Processing. (just freezes the game)
+  textFont(f,16);                  // STEP 3 Specify font to be used
+  fill(255);
+  text("ADDING NOT THE ISSUE!",100,100);
   
   asteroids = new ArrayList<Asteroid>();
   for(int i = 0; i < NUM_ASTEROIDS; i++){
@@ -65,7 +68,7 @@ public void draw() {
       i--;
     }
   }
-    
+    /*
   int i = 0;  
   while(bullets.size() > 0 && i < bullets.size() ){
     //print("i: " + i );
@@ -102,6 +105,7 @@ public void draw() {
     }
     i++; //next bullet
   }
+    */
     
   // Redraw spaceship at current location
   bob.show(); 
