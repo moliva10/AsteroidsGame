@@ -30,7 +30,7 @@ public void setup() {
   bob = new Spaceship( );
   bullets = new ArrayList<Bullet>();
   
-  bullets.add( new Bullet(bob) ); //adding bullests is causing an issue in Github but not Processing. (just freezes the game)
+  //bullets.add( new Bullet(bob) ); //adding bullests is causing an issue in Github but not Processing. (just freezes the game)
   textFont(f,16);                  // STEP 3 Specify font to be used
   fill(255);
   text("ADDING NOT THE ISSUE!",100,100);
