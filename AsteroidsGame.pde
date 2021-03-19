@@ -1,6 +1,6 @@
 //float[][] corners = { { -8, -8 }, { 16, 0 }, { -8, 8 }, { -2, 0 }, { -8, -8 } };
 final static int ROTATE = 2; //speed of rotation
-final static int PRESSED_FACTOR = 2; //Multipler if key is pressed and held down
+final static int PRESSED_FACTOR = 5; //Multipler if key is pressed an held down
 final static double ACCELERATE = 0.5; //Rate of increase for each key press
 final static int NUM_ASTEROIDS = 10;
 
@@ -63,18 +63,6 @@ public void draw() {
     bullets.get(i).show();
     bullets.get(i).move();  
     
-    //remove Bullets that fly off the screen
-    print("bullets.get(i).getX(): " + bullets.get(i).getX());
-    if (bullets.get(i).getX() < 0 || bullets.get(i).getX() > width || 
-        bullets.get(i).getY() < 0 || bullets.get(i).getY() > height)
-    {
-      bullets.remove(i);
-      i--;
-      if( i < 0){
-          break;
-        }
-    }
-    
     int j = 0;
     while ( asteroids.size() > 0 && j < asteroids.size() ){
       //asteroids.get(j).show();
@@ -85,9 +73,12 @@ public void draw() {
         i--;
         asteroids.remove(j);
         j--;     
-        if( i < 0 || j < 0){
+        if( i < 0){
           break;
         }
+        if (j < 0){
+          break;
+        }        
       }
       j++; //Next asteriod
     }
@@ -142,7 +133,7 @@ public void keyPressed(){
       //If not currently pressed, accelerate finer
       else{ 
         accelerate = ACCELERATE;
-        upIsPressed = true;
+        rightIsPressed = true;
       }
       bob.accelerate( accelerate );
     }
@@ -150,7 +141,7 @@ public void keyPressed(){
       bob.hyperspace();
     }      
   }
-  else if (key == 'b'){
+  else if (key == ' '){
       bullets.add( new Bullet(bob) );
     }
 }
@@ -172,4 +163,3 @@ public void keyReleased(){
     
   }
 }
-  
