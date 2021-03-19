@@ -21,8 +21,9 @@ boolean leftIsPressed = false;
 boolean rightIsPressed = false;
 boolean upIsPressed = false;
 
+
 public void setup() {
-  size(800, 800);
+  size(640, 480);
   background(0);
   bob = new Spaceship( );
   bullets = new ArrayList<Bullet>();
@@ -63,6 +64,18 @@ public void draw() {
     bullets.get(i).show();
     bullets.get(i).move();  
     
+    //remove Bullets that fly off the screen
+    print("bullets.get(i).getX(): " + bullets.get(i).getX());
+    if (bullets.get(i).getX() < 0 || bullets.get(i).getX() > width || 
+        bullets.get(i).getY() < 0 || bullets.get(i).getY() > height)
+    {
+      bullets.remove(i);
+      i--;
+      if( i < 0){
+          break;
+        }
+    }
+    
     int j = 0;
     while ( asteroids.size() > 0 && j < asteroids.size() ){
       //asteroids.get(j).show();
@@ -73,12 +86,9 @@ public void draw() {
         i--;
         asteroids.remove(j);
         j--;     
-        if( i < 0){
+        if( i < 0 || j < 0){
           break;
         }
-        if (j < 0){
-          break;
-        }        
       }
       j++; //Next asteriod
     }
@@ -128,12 +138,12 @@ public void keyPressed(){
       double accelerate = 0.0;
       //Check to see if key is currently pressed, accelerate coarser
       if(upIsPressed){
-        accelerate = ACCELERATE * PRESSED_FACTOR;
+        accelerate = ACCELERATE * 0.5; //PRESSED_FACTOR;
       }
       //If not currently pressed, accelerate finer
       else{ 
         accelerate = ACCELERATE;
-        rightIsPressed = true;
+        upIsPressed = true;
       }
       bob.accelerate( accelerate );
     }
@@ -141,8 +151,14 @@ public void keyPressed(){
       bob.hyperspace();
     }      
   }
-  else if (key == ' '){
+  else if (key == 'b'){
       bullets.add( new Bullet(bob) );
+      if (rightIsPressed)
+        bob.rotate(ROTATE * PRESSED_FACTOR);
+      if (leftIsPressed)
+        bob.rotate(-ROTATE * PRESSED_FACTOR);
+      //rightIsPressed = true; //does pressing b cause keyReleased() to fire?
+      //leftIsPressed = true; //does pressing b cause keyReleased() to fire?
     }
 }
 
@@ -163,3 +179,4 @@ public void keyReleased(){
     
   }
 }
+  
