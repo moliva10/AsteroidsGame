@@ -71,7 +71,7 @@ public void draw() {
     bullets.get(i).move();  
     
     //remove Bullets that fly off the screen
-    print("bullets.get(i).getX(): " + bullets.get(i).getX());
+    //print("bullets.get(i).getX(): " + bullets.get(i).getX());
     if (bullets.get(i).getX() < 0 || bullets.get(i).getX() > width || 
         bullets.get(i).getY() < 0 || bullets.get(i).getY() > height)
     {
@@ -79,7 +79,7 @@ public void draw() {
       i--;
       if( i < 0){
           break;
-        }
+      }
     }
     
     int j = 0;
@@ -155,12 +155,22 @@ public void keyPressed(){
     }
     else if (keyCode == SHIFT){
       bob.hyperspace();
-    }      
+    }   
+    else if (keyCode == CONTROL){
+      text("Control pressed",10,100);   // STEP 5 Display Text
+      //bullets.add( new Bullet(bob) );     
+      if (rightIsPressed)
+        bob.rotate(ROTATE * PRESSED_FACTOR);
+      if (leftIsPressed)
+        bob.rotate(-ROTATE * PRESSED_FACTOR);
+      //rightIsPressed = true; //does pressing b cause keyReleased() to fire?
+      //leftIsPressed = true; //does pressing b cause keyReleased() to fire?
+    }
   }
   else if (key == 'b'){
       text("b pressed",10,100);   // STEP 5 Display Text
       bullets.add( new Bullet(bob) );
-      text("b pressed",10,100);   // STEP 5 Display Text
+      //text("b pressed",10,100);   // STEP 5 Display Text
       if (rightIsPressed)
         bob.rotate(ROTATE * PRESSED_FACTOR);
       if (leftIsPressed)
