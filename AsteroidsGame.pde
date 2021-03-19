@@ -30,6 +30,8 @@ public void setup() {
   bob = new Spaceship( );
   bullets = new ArrayList<Bullet>();
   
+  bullets.add( new Bullet(bob) ); //adding bullests is causing an issue in Github but not processing.
+  
   asteroids = new ArrayList<Asteroid>();
   for(int i = 0; i < NUM_ASTEROIDS; i++){
     asteroids.add( new Asteroid() );
