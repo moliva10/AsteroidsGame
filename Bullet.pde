@@ -12,13 +12,25 @@ public class Bullet extends Floater{
     //Bullet should be faster than ship
     accelerate(6);    
     
+    myColor = 255;
+    
   }
   
   public void show()  //Draws the bullet at the current position  
   {             
     fill(myColor);   
-    //stroke(myColor);    
+    stroke(myColor);   
+    //ellipse((float)myCenterX, (float)myCenterY, 2.0, 2.0);
     circle((float)myCenterX, (float)myCenterY, 2.0);
+  }
+  
+  /* 
+  * Bullets should fly off the screen
+  */
+  @Override
+  public void move(){
+    myCenterX += myDirectionX;
+    myCenterY += myDirectionY;
   }
     
   
