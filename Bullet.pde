@@ -1,6 +1,9 @@
 public class Bullet extends Floater{
   
   public Bullet(Spaceship theShip){
+    xCorners = new int[]{-8, 16, -8, -2}; //Level these null causing an issue when created Bullets?
+    yCorners = new int[]{-8, 0, 8, 0};
+    
     myCenterX = theShip.getX();
     myCenterY = theShip.getY();
     
