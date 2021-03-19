@@ -22,7 +22,7 @@ boolean rightIsPressed = false;
 boolean upIsPressed = false;
 
 public void settings() {
-  size(640, 480);
+  size(800, 800);
 }
 
 public void setup() {
