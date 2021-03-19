@@ -133,7 +133,7 @@ public void keyPressed(){
       //If not currently pressed, accelerate finer
       else{ 
         accelerate = ACCELERATE;
-        rightIsPressed = true;
+        upIsPressed = true;
       }
       bob.accelerate( accelerate );
     }
@@ -141,7 +141,7 @@ public void keyPressed(){
       bob.hyperspace();
     }      
   }
-  else if (key == ' '){
+  else if (key == 'b'){
       bullets.add( new Bullet(bob) );
     }
 }
