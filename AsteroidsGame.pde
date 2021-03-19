@@ -22,7 +22,7 @@ boolean rightIsPressed = false;
 boolean upIsPressed = false;
 
 public void setup() {
-  size(640, 480);
+  size(800, 800);
   background(0);
   bob = new Spaceship( );
   bullets = new ArrayList<Bullet>();
