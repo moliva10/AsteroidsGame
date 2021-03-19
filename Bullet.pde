@@ -27,7 +27,7 @@ public class Bullet extends Floater{
   /* 
   * Bullets should fly off the screen
   */
-  @Override
+  //@Override
   public void move(){
     myCenterX += myDirectionX;
     myCenterY += myDirectionY;
