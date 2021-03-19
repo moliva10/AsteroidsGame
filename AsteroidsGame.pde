@@ -15,6 +15,7 @@ Spaceship bob;
 ArrayList<Asteroid> asteroids;
 ArrayList<Bullet> bullets;
 Star[] nightSky = new Star[200];
+PFont f;
 
 //Used to adjust fine/course control of rotation and acceleration
 boolean leftIsPressed = false;
@@ -23,8 +24,9 @@ boolean upIsPressed = false;
 
 
 public void setup() {
-  size(480, 480);
+  size(640, 480);
   background(0);
+  f = createFont("Arial",16,true); // STEP 2 Create Font
   bob = new Spaceship( );
   bullets = new ArrayList<Bullet>();
   
@@ -42,6 +44,10 @@ public void setup() {
 public void draw() {
   //Black out screen every frame
   background(0);
+  
+  textFont(f,16);                  // STEP 3 Specify font to be used
+  fill(255);                       // STEP 4 Specify font color 
+  //text("Hello Strings!",10,100);   // STEP 5 Display Text
   
   //Display all stars after blacking out image
   for (Star s: nightSky){
@@ -152,7 +158,9 @@ public void keyPressed(){
     }      
   }
   else if (key == 'b'){
+      text("b pressed",10,100);   // STEP 5 Display Text
       bullets.add( new Bullet(bob) );
+      text("b pressed",10,100);   // STEP 5 Display Text
       if (rightIsPressed)
         bob.rotate(ROTATE * PRESSED_FACTOR);
       if (leftIsPressed)
