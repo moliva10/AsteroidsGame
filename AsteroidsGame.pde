@@ -21,11 +21,8 @@ boolean leftIsPressed = false;
 boolean rightIsPressed = false;
 boolean upIsPressed = false;
 
-public void settings() {
-  size(640, 480);
-}
-
 public void setup() {
+  size(640, 480);
   background(0);
   bob = new Spaceship( );
   bullets = new ArrayList<Bullet>();
