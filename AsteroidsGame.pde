@@ -112,7 +112,9 @@ public void draw() {
   bob.show(); 
   //Update location of spaceship based on current speed (myDirectionX/Y vector)
   bob.move();   
-      
+  text("NOT ADDING BULLETS ITS DISPLAYING THEM",200,100);   // STEP 5 Display Text
+  text(bullets.size(),230,100);
+    
 }
 
 //Event Handler when keys are pressed
