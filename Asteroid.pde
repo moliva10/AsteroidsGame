@@ -18,8 +18,8 @@ public class Asteroid extends Floater{
     int y6 = 0;
     
     
-    xCorners = new int[]{x1, 7, 13, 6, -11, -5};
-    yCorners = new int[]{y1, -8, 0, 10, 8, 0};
+    xCorners = new int[]{x1, x2, 13, 6, -11, x6};
+    yCorners = new int[]{y1, y2, 0, 10, 8, y6};
     //xCorners = new int[]{-11, 7, 13, 6, -11, -5};
     //yCorners = new int[]{-8, -8, 0, 10, 8, 0};
     
