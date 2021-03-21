@@ -31,9 +31,9 @@ public void setup() {
   bullets = new ArrayList<Bullet>();
   
   //bullets.add( new Bullet(bob) ); //adding bullests is causing an issue in Github but not Processing. (just freezes the game)
-  textFont(f,16);                  // STEP 3 Specify font to be used
-  fill(255);
-  text("ADDING NOT THE ISSUE!",100,100);
+  //textFont(f,16);                  // STEP 3 Specify font to be used
+  //fill(255);
+  //text("ADDING NOT THE ISSUE!",100,100);
   
   asteroids = new ArrayList<Asteroid>();
   for(int i = 0; i < NUM_ASTEROIDS; i++){
@@ -69,7 +69,8 @@ public void draw() {
       i--;
     }
   }
-    /*
+  
+  /*
   int i = 0;  
   while(bullets.size() > 0 && i < bullets.size() ){
     //print("i: " + i );
@@ -164,19 +165,9 @@ public void keyPressed(){
     }
     else if (keyCode == SHIFT){
       bob.hyperspace();
-    }   
-    else if (keyCode == CONTROL){
-      text("Control pressed",10,100);   // STEP 5 Display Text
-      bullets.add( new Bullet(bob) );     
-      if (rightIsPressed)
-        bob.rotate(ROTATE * PRESSED_FACTOR);
-      if (leftIsPressed)
-        bob.rotate(-ROTATE * PRESSED_FACTOR);
-      //rightIsPressed = true; //does pressing b cause keyReleased() to fire?
-      //leftIsPressed = true; //does pressing b cause keyReleased() to fire?
-    }
+    }       
   }
-  else if (key == 'b'){
+  else if (key == ' '){
       text("b pressed",10,100);   // STEP 5 Display Text
       bullets.add( new Bullet(bob) );
       //text("b pressed",10,100);   // STEP 5 Display Text
@@ -184,8 +175,6 @@ public void keyPressed(){
         bob.rotate(ROTATE * PRESSED_FACTOR);
       if (leftIsPressed)
         bob.rotate(-ROTATE * PRESSED_FACTOR);
-      //rightIsPressed = true; //does pressing b cause keyReleased() to fire?
-      //leftIsPressed = true; //does pressing b cause keyReleased() to fire?
     }
 }
 
