@@ -2,6 +2,10 @@
 
 class Spaceship extends Floater  
 {  
+
+  boolean showThrusters = false;
+  int thrusterFrameCount = 0;
+      
   //No Argument constructor
   public Spaceship(){
     corners = 4;
@@ -25,6 +29,7 @@ class Spaceship extends Floater
   
   public void show( ){
     super.show();
+    
     if (showThrusters){
       thrusterFrameCount++;
       if( thrusterFrameCount > 5){
@@ -47,8 +52,7 @@ class Spaceship extends Floater
         vertex((float)xRotatedTranslated,(float)yRotatedTranslated);    
       }
       endShape(CLOSE);      
-    }
-    
+    }   
   }
   
     public void accelerate(double dAmount){
