@@ -8,8 +8,15 @@ class Star {
   }
   
   public void show(){
-    //int color = (int)(Math.random() * 255);
-    fill((int)(Math.random() * 255 + 100), (int)(Math.random() * 255 + 100), (int)(Math.random() * 255 + 100)); 
-    ellipse(myX, myY, STAR_DIMENSION, STAR_DIMENSION);
+    int r = (int)(Math.random() * 255) + 100;
+    int g = (int)(Math.random() * 255) + 100;
+    int b = (int)(Math.random() * 255) + 100;
+    
+    int dim = (int)(Math.random() * 5) + 1;
+    
+    fill(r, g, b); 
+    stroke(r, g, b);
+    //ellipse(myX, myY, STAR_DIMENSION, STAR_DIMENSION);
+    ellipse(myX, myY, dim, dim);
   }
 }
