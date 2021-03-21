@@ -73,7 +73,8 @@ public void draw() {
   int i = 0;
   while(bullets.size() > 0 && i < bullets.size() ){
     bullets.get(i).show();
-    bullets.get(i).move(); 
+    //bullets.get(i).move(); 
+    i++
   }
   /*
   int i = 0;  
