@@ -33,7 +33,7 @@ public void setup() {
   //bullets.add( new Bullet(bob) ); //adding bullests is causing an issue in Github but not Processing. (just freezes the game)
   //textFont(f,16);                  // STEP 3 Specify font to be used
   //fill(255);
-  //text("ADDING NOT THE ISSUE!",100,100);
+  //text("ADDING NOT THE ISSUE!",200,70);
   
   asteroids = new ArrayList<Asteroid>();
   for(int i = 0; i < NUM_ASTEROIDS; i++){
