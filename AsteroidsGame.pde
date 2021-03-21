@@ -166,7 +166,7 @@ public void keyPressed(){
     }       
   }
   else if (key == ' '){
-      text("space pressed",10,100);   // STEP 5 Display Text
+      //text("space pressed",10,100);   // STEP 5 Display Text
       bullets.add( new Bullet(bob) );
       if (rightIsPressed)
         bob.rotate(ROTATE * PRESSED_FACTOR);
