@@ -70,6 +70,11 @@ public void draw() {
     }
   }
   
+  int i = 0;
+  while(bullets.size() > 0 && i < bullets.size() ){
+    bullets.get(i).show();
+    bullets.get(i).move(); 
+  }
   /*
   int i = 0;  
   while(bullets.size() > 0 && i < bullets.size() ){
@@ -168,9 +173,8 @@ public void keyPressed(){
     }       
   }
   else if (key == ' '){
-      text("b pressed",10,100);   // STEP 5 Display Text
+      text("space pressed",10,100);   // STEP 5 Display Text
       bullets.add( new Bullet(bob) );
-      //text("b pressed",10,100);   // STEP 5 Display Text
       if (rightIsPressed)
         bob.rotate(ROTATE * PRESSED_FACTOR);
       if (leftIsPressed)
