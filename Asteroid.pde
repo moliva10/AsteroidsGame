@@ -11,6 +11,9 @@ public class Asteroid extends Floater{
     int x1 = (int)(Math.random() * 6 - 15); //-15 to -9
     int y1 = (int)(Math.random() * 6 - 12); //-12 to -7
     
+    int x2 = (int)(Math.random() * 6 - 20); //-20 to -14
+    int y2 = -x2;
+    
     int x6 = (int)(Math.random() * 6 - 10); //-10 to -5
     int y6 = 0;
     
