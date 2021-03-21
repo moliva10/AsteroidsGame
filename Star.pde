@@ -8,7 +8,8 @@ class Star {
   }
   
   public void show(){
-    fill(255); //white
+    //int color = (int)(Math.random() * 255);
+    fill((int)(Math.random() * 255 + 100), (int)(Math.random() * 255 + 100), (int)(Math.random() * 255 + 100)); 
     ellipse(myX, myY, STAR_DIMENSION, STAR_DIMENSION);
   }
 }
