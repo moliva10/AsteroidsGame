@@ -23,12 +23,18 @@ class Spaceship extends Floater
     
   }
   
-  public void accelerate(double dAmount){      
-      super.accelerate(dAmount);
-      
-      int[][] thruster = { { -6, -4 }, { -12, 0 }, { -6, 4 } }; //2D Array of verticies 
-      stroke(255, 0, 0);
-      fill(255, 0 ,0);
+  public void show( ){
+    super.show();
+    if (showThrusters){
+      thrusterFrameCount++;
+      if( thrusterFrameCount > 5){
+        showThrusters = false;
+        thrusterFrameCount = 0;
+        return;
+      }
+      int[][] thruster = { { -6, -4 }, { -12, 0 }, { -6, 4 } };
+      stroke(255, 0 ,0);
+      fill(255, 0, 0);
       //convert degrees to radians for sin and cos functions to rotate object         
       double dRadians = myPointDirection*(Math.PI/180);                 
       double xRotatedTranslated, yRotatedTranslated;
@@ -41,6 +47,14 @@ class Spaceship extends Floater
         vertex((float)xRotatedTranslated,(float)yRotatedTranslated);    
       }
       endShape(CLOSE);      
+    }
+    
+  }
+  
+    public void accelerate(double dAmount){
+      showThrusters = true;
+      thrusterFrameCount = 0;
+      super.accelerate(dAmount);
     }
   
   //Setters and Getters
