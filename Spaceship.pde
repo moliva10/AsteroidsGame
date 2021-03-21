@@ -23,6 +23,26 @@ class Spaceship extends Floater
     
   }
   
+  public void accelerate(double dAmount){      
+      super.accelerate(dAmount);
+      
+      int[][] thruster = { { -6, -4 }, { -12, 0 }, { -6, 4 } }; //2D Array of verticies 
+      stroke(255, 0, 0);
+      fill(255, 0 ,0);
+      //convert degrees to radians for sin and cos functions to rotate object         
+      double dRadians = myPointDirection*(Math.PI/180);                 
+      double xRotatedTranslated, yRotatedTranslated;
+
+      beginShape();         
+      for(int i = 0; i < thruster.length; i++){     
+        //rotate and translate the coordinates of the floater using current direction 
+        xRotatedTranslated = ((thruster[i][0]* Math.cos(dRadians)) - (thruster[i][1] * Math.sin(dRadians))+myCenterX);     
+        yRotatedTranslated = ((thruster[i][0]* Math.sin(dRadians)) + (thruster[i][1] * Math.cos(dRadians))+myCenterY);      
+        vertex((float)xRotatedTranslated,(float)yRotatedTranslated);    
+      }
+      endShape(CLOSE);      
+    }
+  
   //Setters and Getters
    public void setX(int x) {myCenterX = x;}  
    public int getX() {return (int)myCenterX;}  
