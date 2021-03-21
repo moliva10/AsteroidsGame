@@ -23,8 +23,8 @@ public class Bullet extends Floater{
   {             
     fill(myColor);   
     stroke(myColor);   
-    //ellipse((float)myCenterX, (float)myCenterY, 2.0, 2.0);
-    circle((float)myCenterX, (float)myCenterY, 2.0);
+    ellipse((float)myCenterX, (float)myCenterY, 2.0, 2.0);
+    //circle((float)myCenterX, (float)myCenterY, 2.0);
   }
   
   /* 
