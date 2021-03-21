@@ -89,7 +89,8 @@ class Spaceship extends Floater
      myCenterY = (int)(Math.random() * (maxY - minY + 1) + minY);
      
      //reset direciton to up
-     myPointDirection = POINT_UP;
+     //myPointDirection = POINT_UP;
+     myPointDirection = (int)(Math.random() * 359);
      
      //reset speed vector to 0.
      myDirectionX = 0;
