@@ -3,7 +3,7 @@ public class Asteroid extends Floater{
   private int rotSpeed;
   
   public Asteroid(){
-    rotSpeed = (int)(Math.random() * 4 + 1);
+    rotSpeed = (int)(Math.random() * 9 - 4);
 
     //Need a random asteroid vertice generator
     corners = 6;
