@@ -70,13 +70,9 @@ public void draw() {
     }
   }
   
-  int i = 0;
-  while(bullets.size() > 0 && i < bullets.size() ){
-    bullets.get(i).show();
-    bullets.get(i).move(); 
-    i++
-  }
-  /*
+  //text("NOT ADDING BULLETS ITS DISPLAYING THEM",200,100);   // STEP 5 Display Text
+  //text(bullets.size(),230,100);
+  
   int i = 0;  
   while(bullets.size() > 0 && i < bullets.size() ){
     //print("i: " + i );
@@ -96,9 +92,7 @@ public void draw() {
     }
     
     int j = 0;
-    while ( asteroids.size() > 0 && j < asteroids.size() ){
-      //asteroids.get(j).show();
-      //asteroids.get(j).move();
+    while ( asteroids.size() > 0 && j < asteroids.size() ){     
       float d = dist(bullets.get(i).getX(), bullets.get(i).getY(), asteroids.get(j).getX(), asteroids.get(j).getY());
       if (d < 10){
         bullets.remove(i);        
@@ -113,14 +107,12 @@ public void draw() {
     }
     i++; //next bullet
   }
-    */
+  
     
   // Redraw spaceship at current location
   bob.show(); 
   //Update location of spaceship based on current speed (myDirectionX/Y vector)
   bob.move();   
-  text("NOT ADDING BULLETS ITS DISPLAYING THEM",200,100);   // STEP 5 Display Text
-  text(bullets.size(),230,100);
     
 }
 
