@@ -8,6 +8,7 @@ public class Asteroid extends Floater{
     //Need a random asteroid vertice generator
     corners = 6;
     
+    int f = (int)(Math.random() * 2) + 1;
     int x1 = (int)(Math.random() * 6 - 15); //-15 to -9
     int y1 = (int)(Math.random() * 6 - 12); //-12 to -7
     
@@ -18,10 +19,10 @@ public class Asteroid extends Floater{
     int y6 = 0;
     
     
-    xCorners = new int[]{x1, x2, 13, 6, -11, x6};
-    yCorners = new int[]{y1, y2, 0, 10, 8, y6};
-    //xCorners = new int[]{-11, 7, 13, 6, -11, -5};
-    //yCorners = new int[]{-8, -8, 0, 10, 8, 0};
+    //xCorners = new int[]{x1, x2, 13, 6, -11, x6};
+    //yCorners = new int[]{y1, y2, 0, 10, 8, y6};
+    xCorners = new int[]{f*-11, f*7, f*13, f*6, f*-11, f*-5};
+    yCorners = new int[]{f*-8, f*-8, f*0, f*10, f*8, f*0};
     
     //Random Location in window
     myCenterX = (int)(Math.random() * width);
