@@ -192,4 +192,23 @@ public void keyReleased(){
     
   }
 }
+
+public void mouseMoved(){
+  //set directions based on angle with current mouse position and Spaceship
+
+  double currentDirection = bob.getPointDirection();
+  
+  double x = bob.getX();
+  double y = bob.getY();
+
+  double mouseDirection = Math.toDegrees(Math.atan( (mouseY - y ) / (mouseX - x ) ) );  
+
+  if( mouseX < x){
+    mouseDirection += 180;
+  }
+  
+  double deltaDirection = mouseDirection - currentDirection;
+  bob.rotate((int)Math.round(deltaDirection) );  
+}
+  
   
