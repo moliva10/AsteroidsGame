@@ -193,7 +193,7 @@ public void keyReleased(){
   }
 }
 
-public void mouseMoved(){
+public boolean mouseMoved(){
   //set directions based on angle with current mouse position and Spaceship
 
   double currentDirection = bob.getPointDirection();
@@ -209,6 +209,8 @@ public void mouseMoved(){
   
   double deltaDirection = mouseDirection - currentDirection;
   bob.rotate((int)Math.round(deltaDirection) );  
+  
+  return false;
 }
   
   
